@@ -1,11 +1,12 @@
 const Card = (props) => {
-  console.log(props.d);
+  //   console.log(props.d);
   const { poster, movieName, description, imdbRating, watchTime } = props.d;
+
   return (
     <>
       <div className="card w-full bg-base-100 shadow-xl">
         <figure>
-          <img className="w-full" src={poster} alt={movieName} />
+          <img className="w-1/2" src={poster} alt={movieName} />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{movieName}</h2>
@@ -15,7 +16,12 @@ const Card = (props) => {
             <p> IMdb Rating: {imdbRating}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch Now</button>
+            <button
+              onClick={() => props.handleTime(watchTime)}
+              className="btn btn-primary"
+            >
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>
