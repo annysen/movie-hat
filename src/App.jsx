@@ -1,10 +1,23 @@
 import "./App.css";
+import Footer from "./Footer";
+import Home from "./Home";
+import Nav from "./Nav";
+import SideCart from "./SideCart";
 
 function App() {
   return (
-    <>
-      <p className="read-the-docs ">Hello</p>
-    </>
+    <div className="mx-7 md:mx-12">
+      <Nav />
+      <div className=" grid grid-cols-3 my-5 gap-5">
+        <span className="col-span-2">
+          <Home />
+        </span>
+        <span>
+          <SideCart />
+        </span>
+      </div>
+      <Footer />
+    </div>
   );
 }
 
