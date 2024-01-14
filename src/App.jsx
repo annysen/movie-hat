@@ -6,7 +6,16 @@ import SideCart from "./SideCart";
 
 function App() {
   const handleTime = (time) => {
-    console.log(time);
+    // console.log(time);
+
+    const storedData = JSON.parse(localStorage.getItem("watchTime"));
+    const sumTime = storedData + time;
+
+    if (storedData) {
+      localStorage.setItem("watchTime", sumTime);
+    } else {
+      localStorage.setItem("watchTime", time);
+    }
   };
   return (
     <div className="mx-7 md:mx-12">
